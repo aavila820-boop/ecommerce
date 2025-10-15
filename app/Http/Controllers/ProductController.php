@@ -25,6 +25,6 @@ class ProductController extends Controller
 
     function create()
     {
-        return "FORM FOR CREATE PRODUCTS";
+        return view("products.create");
     }
 }
