@@ -11,11 +11,6 @@ class ProductController extends Controller
         return "list products";
     }
 
-    function create()
-    {
-        return "FORM FOR CREATE PRODUCTS";
-    }
-
     function details($id, $category = null)
     {
         if ($category != null) {
@@ -23,5 +18,10 @@ class ProductController extends Controller
         } else {
             return "Detail products: " . $id;
         }
+    }
+
+    function create()
+    {
+        return "FORM FOR CREATE PRODUCTS";
     }
 }
