@@ -125,7 +125,7 @@ $productos = [
                 <div class="tarjeta">
                     <img src="<?php echo $producto['imagen']; ?>" alt="Imagen de <?php echo $producto['nombre']; ?>">
                     <div class="contenido">
-                        <h2><?php echo $producto['nombre']; ?></h2>
+                        <h2><?php echo $producto['nombre']; ?></h2>1
                         <p>Marca: <?php echo $producto['marca']; ?></p>
                         <p><?php echo $producto['descripcion']; ?></p>
                         <p class="precio">$<?php echo number_format($producto['precio'], 0, ',', '.'); ?></p>
