@@ -16,17 +16,26 @@
 
                             <div class="col-12">
                                 <label for="productName" class="form-label text-uppercase fs-7 fw-semibold text-muted">Nombre del producto</label>
-                                <input id="productName" name="name" type="text" class="form-control form-control-lg" placeholder="Ej: Auriculares Lunaris" required>
+                                @error('name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                                <input id="productName" name="name" type="text" class="form-control form-control-lg" placeholder="Ej: Auriculares Lunaris" value="{{ old('name') }}" required>
                             </div>
 
                             <div class="col-12">
                                 <label for="productDescription" class="form-label text-uppercase fs-7 fw-semibold text-muted">Descripción breve</label>
-                                <textarea id="productDescription" name="description" class="form-control form-control-lg" rows="4" placeholder="Cuenta por qué este producto merece un lugar en el catálogo" required></textarea>
+                                @error('description')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                                <textarea id="productDescription" name="description" class="form-control form-control-lg" rows="4" placeholder="Cuenta por qué este producto merece un lugar en el catálogo" required>{{ old('description') }}</textarea>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="productPrice" class="form-label text-uppercase fs-7 fw-semibold text-muted">Precio (COP)</label>
-                                <input id="productPrice" name="price" type="number" step="0.01" min="0" class="form-control form-control-lg" placeholder="Ej: 250000" required>
+                                @error('price')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                                <input id="productPrice" name="price" type="number" step="0.01" min="0" class="form-control form-control-lg" placeholder="Ej: 250000" value="{{ old('price') }}" required>
                             </div>
 
                             <div class="col-md-6">
@@ -36,20 +45,30 @@
 
                             <div class="col-md-6">
                                 <label for="productCategory" class="form-label text-uppercase fs-7 fw-semibold text-muted">Categoría</label>
-                                <select id="productCategory" name="category" class="form-select form-select-lg" required>
-                                    <option value="" disabled selected>Selecciona una categoría</option>
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @error('category')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                                <select class="form-control" id="productCategory" name="category">
+                                    <option value="">-- Category --</option>
+                                    @foreach ($categories as $item)
+                                        <option value="{{ $item->id }}" {{ old('category') == $item->id ? 'selected' : '' }}>
+                                            {{ $item->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="productBrand" class="form-label text-uppercase fs-7 fw-semibold text-muted">Marca</label>
-                                <select id="productBrand" name="brand" class="form-select form-select-lg" required>
-                                    <option value="" disabled selected>Selecciona una marca</option>
-                                    @foreach ($brands as $brand)
-                                        <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                @error('brand')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                                <select class="form-control" id="productBrand" name="brand">
+                                    <option value="">-- Brand --</option>
+                                    @foreach ($brands as $item)
+                                        <option value="{{ $item->id }}" {{ old('brand') == $item->id ? 'selected' : '' }}>
+                                            {{ $item->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
