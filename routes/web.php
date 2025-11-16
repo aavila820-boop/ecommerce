@@ -9,7 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Models\Category;
 use App\Models\Product;
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'index'])->name('products.index');
 Route::get('products/{id}/{category?}', [ProductController::class, 'detail']);
 
 Auth::routes();
