@@ -11,7 +11,7 @@
                         <p class="mb-0 opacity-85 small">Registra los detalles principales para publicar tu producto.</p>
                     </div>
                     <div class="card-body bg-white">
-                        <form method="POST" action="{{ url('/admin/products') }}" class="row g-4">
+                        <form action="{{ route('admin.products.store') }}" method="POST" class="row g-4">
                             @csrf
 
                             <div class="col-12">
@@ -56,7 +56,7 @@
 
                             <div class="col-12">
                                 <label for="productImage" class="form-label text-uppercase fs-7 fw-semibold text-muted">URL de imagen</label>
-                                <input id="productImage" name="image" type="url" class="form-control form-control-lg" placeholder="https://example.com/producto.jpg">
+                                <input id="productImage" type="url" class="form-control form-control-lg" placeholder="https://example.com/producto.jpg">
                             </div>
 
                             <div class="col-12 d-flex justify-content-end gap-2">

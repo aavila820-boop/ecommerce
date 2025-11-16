@@ -171,11 +171,11 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if (Request::routeIs('shop.*')) active @endif"
-                        href="{{ route('shop.index') }}">Tienda</a>
+                        href="{{ url('/') }}">Tienda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if (Request::routeIs('offers.*')) active @endif"
-                        href="{{ route('offers.index') }}">Ofertas</a>
+                        href="{{ url('/') }}">Ofertas</a>
                 </li>
             </ul>
 
@@ -198,7 +198,7 @@
                     @endif
                 @else
                     <li class="nav-item me-3 d-none d-lg-block">
-                        <a class="nav-link" href="{{ route('cart.index') }}">Carrito</a>
+                        <a class="nav-link" href="{{ url('/') }}">Carrito</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -210,8 +210,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('profile.show') }}">Mi perfil</a>
-                            <a class="dropdown-item" href="{{ route('orders.index') }}">Mis pedidos</a>
+                        <a class="dropdown-item" href="{{ route('home') }}">Mi perfil</a>
+                        <a class="dropdown-item" href="{{ route('home') }}">Mis pedidos</a>
                             <hr class="dropdown-divider">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
