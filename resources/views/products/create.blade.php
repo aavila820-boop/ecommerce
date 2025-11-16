@@ -27,7 +27,7 @@
                                 @error('description')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
-                                <textarea id="productDescription" name="description" class="form-control form-control-lg" rows="4" placeholder="Cuenta por qué este producto merece un lugar en el catálogo" required>{{ old('description') }}</textarea>
+                                <textarea id="productDescription" name="description" class="form-control form-control-lg" rows="4" placeholder="Cuenta por qué este producto merece un lugar en el catálogo" required>{{old('description')}}</textarea>
                             </div>
 
                             <div class="col-md-6">
