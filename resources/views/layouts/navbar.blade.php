@@ -180,6 +180,11 @@
             </ul>
 
             <ul class="navbar-nav ms-auto align-items-lg-center">
+                @auth
+                    <li class="nav-item me-lg-2">
+                        <a class="btn btn-auth-outline" href="{{ route('admin.index') }}">Panel admin</a>
+                    </li>
+                @endauth
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item me-lg-2">

@@ -15,8 +15,21 @@ class CategoryFactory extends Factory
 
     public function definition(): array
     {
+        $category = [
+            'Phones',
+            'Computers',
+            'TVs',
+            'Appliances',
+            'Cameras',
+            'Audio',
+            'Wearables',
+            'Gaming',
+            'Networking',
+            'Accesories'
+        ];
+
         return [
-            'name' => fake()->name()
+            'name' => $this->faker->randomElement($category),
         ];
     }
 }
