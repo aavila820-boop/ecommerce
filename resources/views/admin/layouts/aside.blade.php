@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('admin/categories') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
-                    href="{{ route('admin.categories.create') }}">
+                    href="{{ route('admin.categories.table') }}">
                     <i class="material-symbols-rounded opacity-5">receipt_long</i>
                     <span class="nav-link-text ms-1">Categories</span>
                 </a>
