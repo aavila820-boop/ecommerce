@@ -56,9 +56,15 @@ class ProductController extends Controller
     }
 
     public function table(){
-        $products = Product::all();
+        $products = Product::paginate(10);
         return view('products.table',[
             'products'=>$products
         ]);
+    }
+
+    function delete(Product $product)
+    {
+        $product->delete();
+        return redirect()->back();
     }
 }
