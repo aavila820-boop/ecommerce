@@ -41,9 +41,9 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'price' => 'required|numeric',
-            'category' => 'required|exists:categories.id',
-            'brand' => 'required|exists:brands.id',
+            'price' => 'required|numeric|min:0|max:999999.99',
+            'category' => 'required|exists:categories,id',
+            'brand' => 'required|exists:brand,id',
         ]);
         $product = new Product();
         $product->name = $request->get('name');
@@ -52,7 +52,7 @@ class ProductController extends Controller
         $product->category_id = $request->get('category');
         $product->brand_id = $request->get('brand');
         $product->save();
-        return "PRODUCT SAVED!!!!";
+        return redirect()->route('admin.products.table');
     }
 
     public function table(){
